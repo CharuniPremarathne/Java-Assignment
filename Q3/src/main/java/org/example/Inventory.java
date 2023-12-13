@@ -33,41 +33,50 @@ public class Inventory {
 
 
     //add vehicle to the inventory
-    public void addVehicle(Vehicle vehicle, int index){
+    public void addVehicle(Vehicle vehicle, int index) {
         vehicles[index] = vehicle;
     }
 
     //calculate the average price of a vehicle
-    public void getAveragePrice(){
+    public double getAveragePrice() {
         double total = 0;
         int count = 0;
+        double avg = 0;
 
-        for(Vehicle vehicle : vehicles){
-            if(vehicle != null){
+        for (Vehicle vehicle : vehicles) {
+            if (vehicle != null) {
                 total += vehicle.getPrice();
                 count++;
             }
         }
 
-        if(count > 0){
-            System.out.println ("The average price of a vehicle is : " + total/count);
-        }else{
-            System.out.println ("Incorrect count");
+        if (count > 0) {
+            avg = total / count;
+            System.out.println("The average price of a vehicle is : " + avg);
+        } else {
+            System.out.println("Incorrect count");
         }
+        return avg;
+
     }
 
     //search the matching vehicles by make and model
-    public void searchByMakeAndModel(String make, String model) {
+    public List<Vehicle> searchByMakeAndModel(String make, String model) {
         List<Vehicle> matchingVehicles = new ArrayList<>();
 
-        for(Vehicle vehicle : vehicles){
-            if(vehicle.getMake().equals(make) && vehicle.getModel().equals(model)){
-                matchingVehicles.add(vehicle);
+        try{
+            for (Vehicle vehicle : vehicles) {
+                if (vehicle.getMake().equals(make) && vehicle.getModel().equals(model)) {
+                    matchingVehicles.add(vehicle);
+                }
             }
+        }catch (NullPointerException e){
+            e.printStackTrace();
         }
+
 
         System.out.print(Arrays.toString(matchingVehicles.toArray(new Vehicle[0])));
         //System.out.print(matchingVehicles.toArray(new Vehicle[0]));
-
+        return matchingVehicles;
     }
 }

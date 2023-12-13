@@ -15,7 +15,8 @@ public class Main {
 
 
         inventory1.getAveragePrice();
-        inventory1.searchByMakeAndModel("Toyota", "Camry");
+
+        System.out.println("\n" + "Matching vehicles : " + inventory1.searchByMakeAndModel("Toyota", "Camry"));
 
     }
 }
