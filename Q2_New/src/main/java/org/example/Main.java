@@ -100,11 +100,19 @@ public class Main {
                         System.out.print("Enter your account number : ");
                         int accNumberD = scanner.nextInt();
 
-                        //deposit money
-                        System.out.print("Enter the amount you want to deposit : ");
-                        double deposit = scanner.nextDouble();
+                        try{
+                            //deposit money
+                            System.out.print("Enter the amount you want to deposit : ");
+                            double deposit = scanner.nextDouble();
 
-                        bank.deposit(accNumberD, deposit);
+                            if(deposit < 0){
+                                throw new AmountException(deposit);
+                            }else{
+                                bank.deposit(accNumberD, deposit);
+                            }
+                        }catch(AmountException e){
+                            System.out.println("\n" + "Invalid amount");
+                        }
 
                         break;
 
@@ -114,11 +122,24 @@ public class Main {
                         System.out.print("Enter your account number : ");
                         int accNumberW = scanner.nextInt();
 
-                        //withdraw money
-                        System.out.print("Enter the amount you want to withdraw : ");
-                        double withdraw = scanner.nextDouble();
+                        try{
+                            //withdraw money
+                            System.out.print("Enter the amount you want to withdraw : ");
+                            double withdraw = scanner.nextDouble();
 
-                        bank.withdraw(accNumberW, withdraw);
+                            if(withdraw < 0){
+                                throw new AmountException(withdraw);
+                            }else{
+                                bank.withdraw(accNumberW, withdraw);
+                            }
+                        }catch (AmountException e){
+                            System.out.println("\n" + "Invalid Amount");
+                        }
+                        //withdraw money
+//                        System.out.print("Enter the amount you want to withdraw : ");
+//                        double withdraw = scanner.nextDouble();
+//
+//                        bank.withdraw(accNumberW, withdraw);
 
                         break;
 

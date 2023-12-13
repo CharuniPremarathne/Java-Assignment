@@ -41,7 +41,12 @@ public class Customer {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        if(validateEmail(email)){
+            this.email = email;
+        }else{
+            System.out.println("Invalid Pattern");
+        }
+
     }
 
     public String getPhone() {
@@ -49,7 +54,12 @@ public class Customer {
     }
 
     public void setPhone(String phone) {
-        this.phone = phone;
+        if(validatePhone(phone)){
+            this.phone = phone;
+        }else{
+            System.out.println("Invalid Input");
+        }
+
     }
 
     //set bankAccount with the customer
@@ -59,5 +69,17 @@ public class Customer {
 
     public BankAccount getBankAccount() {
         return bankAccount;
+    }
+
+    public boolean validateEmail(String email){
+        String valEmail = "^(.+)@(.+)$";
+
+        return email.matches(valEmail);
+    }
+
+    public boolean validatePhone(String phone){
+        String valPhone = "^[0-9]+$";
+
+        return phone.matches(valPhone);
     }
 }

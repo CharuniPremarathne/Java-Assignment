@@ -56,21 +56,36 @@ public class BankAccount {
     }
 
     //deposit money
-    public void depositMoney(double depositAmount){
+//    public void depositMoney(double depositAmount){
+//        if (depositAmount > 0){
+//            //update the balance
+//            balance += depositAmount;
+//            System.out.println("Successful..  You deposited  : " + depositAmount + "/=");
+//
+//            //store the transaction details
+//            addTransaction("124", LocalDate.now(), depositAmount, "deposit");
+//        }else{
+//            System.out.println("Invalid amount... Please try again..");
+//        }
+//    }
+
+    public double depositMoney(double depositAmount){
         if (depositAmount > 0){
             //update the balance
             balance += depositAmount;
             System.out.println("Successful..  You deposited  : " + depositAmount + "/=");
 
             //store the transaction details
-            addTransaction("124", LocalDate.now(), depositAmount, "deposit");
+            //addTransaction("124", LocalDate.now(), depositAmount, "deposit");
+            return balance;
         }else{
             System.out.println("Invalid amount... Please try again..");
+            return 0;
         }
     }
 
     //withdraw money
-    public void withdrawMoney(double withdrawAmount){
+    public double withdrawMoney(double withdrawAmount){
         if (withdrawAmount > 0 && balance >= withdrawAmount){
 
             try{
@@ -86,18 +101,25 @@ public class BankAccount {
                     //store the transaction details
                     addTransaction("123", LocalDate.now(), withdrawAmount, "withdraw");
                 }
+
             }catch (BalanceException e){
                 e.printStackTrace();
             }
-
+            return balance;
         }else{
             System.out.println("Invalid amount... Please try again..");
+            return 0;
         }
     }
 
     public void addTransaction(String transID, LocalDate transDate, double amount, String transType){
-        Transactions transactions = new Transactions(transID, transDate, amount, transType);
-        transactionList.add(transactions);
+        try{
+            Transactions transactions = new Transactions(transID, transDate, amount, transType);
+            transactionList.add(transactions);
+        }catch(NullPointerException e){
+            e.printStackTrace();
+        }
+
     }
     //read transactions
     public List<Transactions> getTransactionList(){

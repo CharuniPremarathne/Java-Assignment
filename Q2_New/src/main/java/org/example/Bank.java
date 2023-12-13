@@ -9,28 +9,38 @@ public class Bank {
     private List<Customer> customerList;
     private List<BankAccount> bankAccountList;
 
-    public Bank(){
+    public Bank() {
         this.customerList = new ArrayList<>();
         this.bankAccountList = new ArrayList<>();
     }
 
     //add customers
-    public void addCustomer(String customerID, String customerName, String email, String phone){
+    public void addCustomer(String customerID, String customerName, String email, String phone) {
+
         //create new customer
-        Customer customer = new Customer(customerID, customerName, email, phone);
-        customerList.add(customer);
+        try {
+            Customer customer = new Customer(customerID, customerName, email, phone);
+            customerList.add(customer);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     //remove customer
-    public void removeCustomer(String email){
+    public void removeCustomer(String email) {
         Customer customer = findCustomer(email);
         customerList.remove(customer);
     }
 
     //add bank account
-    public void addBankAccount(int accNumber, String accHolderName, double balance, String accType){
-        BankAccount bankAccount = new BankAccount(accNumber, accHolderName, balance, accType);
-        bankAccountList.add(bankAccount);
+    public void addBankAccount(int accNumber, String accHolderName, double balance, String accType) {
+        try{
+            BankAccount bankAccount = new BankAccount(accNumber, accHolderName, balance, accType);
+            bankAccountList.add(bankAccount);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
     }
 
 //    //add bank account
@@ -39,60 +49,60 @@ public class Bank {
 //    }
 
     //remove bank account
-    public void removeBankAccount(int accNumber){
+    public void removeBankAccount(int accNumber) {
         BankAccount account = findAccount(accNumber);
         bankAccountList.remove(account);
     }
 
     //return list of customer details
-    public List<Customer> getCustomerList(){
+    public List<Customer> getCustomerList() {
         return customerList;
     }
 
     //return list of bank account details
-    public List<BankAccount>  getBankAccountList() {
+    public List<BankAccount> getBankAccountList() {
         return bankAccountList;
     }
 
     //deposit money in the bank account
-    public void deposit(int accNumber, double depositAmount){
+    public void deposit(int accNumber, double depositAmount) {
         //find the account
         BankAccount account = findAccount(accNumber);
 
         //update the balance
-        try{
+        try {
             account.depositMoney(depositAmount);
-        }catch(NullPointerException e){
+        } catch (NullPointerException e) {
             System.out.println("Can't find Account");
         }
         //assert account != null;
 
         //display balance
-        System.out.println ("Your current balance is  : " + account.getBalance());
+        System.out.println("Your current balance is  : " + account.getBalance());
     }
 
     //withdraw money in the bank account
-    public void withdraw(int accNumber, double withdrawAmount){
+    public void withdraw(int accNumber, double withdrawAmount) {
         //find the account
         BankAccount account = findAccount(accNumber);
 
         //update the balance
-        try{
+        try {
             account.withdrawMoney(withdrawAmount);
-        }catch(NullPointerException e){
+        } catch (NullPointerException e) {
             System.out.println("Can't find Account");
         }
 
         //display balance
-        System.out.println ("Your current balance is  : " + account.getBalance());
+        System.out.println("Your current balance is  : " + account.getBalance());
     }
 
     //find the account (deposit or withdrawal) by account number
-    private BankAccount findAccount(int accNumber) {
-        for(BankAccount account : bankAccountList){
-            if(account.getAccNumber() == accNumber){
+    public BankAccount findAccount(int accNumber) {
+        for (BankAccount account : bankAccountList) {
+            if (account.getAccNumber() == accNumber) {
                 return account;
-            }else{
+            } else {
                 System.out.println("Account not found");
             }
         }
@@ -100,11 +110,11 @@ public class Bank {
     }
 
     //find the customer
-    private Customer findCustomer(String email){
-        for(Customer customer : customerList){
-            if(customer.getEmail().equals(email)){
+    public Customer findCustomer(String email) {
+        for (Customer customer : customerList) {
+            if (customer.getEmail().equals(email)) {
                 return customer;
-            }else{
+            } else {
                 System.out.println("Customer not found");
             }
         }
