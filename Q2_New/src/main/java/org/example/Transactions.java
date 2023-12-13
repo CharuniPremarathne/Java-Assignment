@@ -1,16 +1,17 @@
 package org.example;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Transactions {
     private String transactionID;
-    private Date transactionDate;
+    private LocalDate transactionDate;
     private double transactionAmount;
     private String transactionType;
 
 
     public Transactions(){}
-    public Transactions(String transactionID, Date transactionDate, double transactionAmount, String transactionType) {
+    public Transactions(String transactionID, LocalDate transactionDate, double transactionAmount, String transactionType) {
         this.transactionID = transactionID;
         this.transactionDate = transactionDate;
         this.transactionAmount = transactionAmount;
@@ -25,11 +26,11 @@ public class Transactions {
         this.transactionID = transactionID;
     }
 
-    public Date getTransactionDate() {
+    public LocalDate getTransactionDate() {
         return transactionDate;
     }
 
-    public void setTransactionDate(Date transactionDate) {
+    public void setTransactionDate(LocalDate transactionDate) {
         this.transactionDate = transactionDate;
     }
 

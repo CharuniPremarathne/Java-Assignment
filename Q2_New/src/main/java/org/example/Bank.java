@@ -1,16 +1,17 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 public class Bank {
     //customer and bank account lists
-    private Set<Customer> customerList;
-    private Set<BankAccount> bankAccountList;
+    private List<Customer> customerList;
+    private List<BankAccount> bankAccountList;
 
     public Bank(){
-        this.customerList = new HashSet<>();
-        this.bankAccountList = new HashSet<>();
+        this.customerList = new ArrayList<>();
+        this.bankAccountList = new ArrayList<>();
     }
 
     //add customers
@@ -27,7 +28,7 @@ public class Bank {
     }
 
     //add bank account
-    public void addBankAccount(String accNumber, String accHolderName, double balance, String accType){
+    public void addBankAccount(int accNumber, String accHolderName, double balance, String accType){
         BankAccount bankAccount = new BankAccount(accNumber, accHolderName, balance, accType);
         bankAccountList.add(bankAccount);
     }
@@ -38,50 +39,58 @@ public class Bank {
 //    }
 
     //remove bank account
-    public void removeBankAccount(String accNumber){
+    public void removeBankAccount(int accNumber){
         BankAccount account = findAccount(accNumber);
         bankAccountList.remove(account);
     }
 
     //return list of customer details
-    public Set<Customer> getCustomerList(){
+    public List<Customer> getCustomerList(){
         return customerList;
     }
 
     //return list of bank account details
-    public Set<BankAccount> getBankAccountList() {
+    public List<BankAccount>  getBankAccountList() {
         return bankAccountList;
     }
 
     //deposit money in the bank account
-    public void deposit(String accNumber, double depositAmount){
+    public void deposit(int accNumber, double depositAmount){
         //find the account
         BankAccount account = findAccount(accNumber);
 
         //update the balance
-        assert account != null;
-        account.depositMoney(depositAmount);
+        try{
+            account.depositMoney(depositAmount);
+        }catch(NullPointerException e){
+            System.out.println("Can't find Account");
+        }
+        //assert account != null;
 
         //display balance
         System.out.println ("Your current balance is  : " + account.getBalance());
     }
 
     //withdraw money in the bank account
-    public void withdraw(String accNumber, double withdrawAmount){
+    public void withdraw(int accNumber, double withdrawAmount){
         //find the account
         BankAccount account = findAccount(accNumber);
 
         //update the balance
-        account.withdrawMoney(withdrawAmount);
+        try{
+            account.withdrawMoney(withdrawAmount);
+        }catch(NullPointerException e){
+            System.out.println("Can't find Account");
+        }
 
         //display balance
         System.out.println ("Your current balance is  : " + account.getBalance());
     }
 
     //find the account (deposit or withdrawal) by account number
-    private BankAccount findAccount(String accNumber) {
+    private BankAccount findAccount(int accNumber) {
         for(BankAccount account : bankAccountList){
-            if(account.getAccNumber().equals(accNumber)){
+            if(account.getAccNumber() == accNumber){
                 return account;
             }else{
                 System.out.println("Account not found");

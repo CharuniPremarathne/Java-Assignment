@@ -1,29 +1,33 @@
 package org.example;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 public class BankAccount {
-    private String accNumber;
+    private int accNumber;
     private String accHolderName;
     private double balance;
     private String accType;
 
     //transaction object
-    Transactions transactions;
+    List<Transactions> transactionList;
 
     //default constructor
     public BankAccount(){}
-    public BankAccount(String accNumber, String accHolderName, double balance, String accType) {
+    public BankAccount(int accNumber, String accHolderName, double balance, String accType) {
         this.accNumber = accNumber;
         this.accHolderName = accHolderName;
         this.balance = 0.0;
         this.accType = accType;
-        this.transactions = new Transactions();
+        this.transactionList = new ArrayList<>();
     }
 
-    public String getAccNumber() {
+    public int getAccNumber() {
         return accNumber;
     }
 
-    public void setAccNumber(String accNumber) {
+    public void setAccNumber(int accNumber) {
         this.accNumber = accNumber;
     }
 
@@ -59,8 +63,7 @@ public class BankAccount {
             System.out.println("Successful..  You deposited  : " + depositAmount + "/=");
 
             //store the transaction details
-            transactions.setTransactionAmount(depositAmount);
-            transactions.setTransactionType("deposit");
+            addTransaction("124", LocalDate.now(), depositAmount, "deposit");
         }else{
             System.out.println("Invalid amount... Please try again..");
         }
@@ -69,15 +72,36 @@ public class BankAccount {
     //withdraw money
     public void withdrawMoney(double withdrawAmount){
         if (withdrawAmount > 0 && balance >= withdrawAmount){
-            //update the balance
-            balance -= withdrawAmount;
-            System.out.println("Successful..  Your withdrawed  : " + withdrawAmount + "/=");
 
-            //store the transaction details
-            transactions.setTransactionAmount(withdrawAmount);
-            transactions.setTransactionType("withdraw");
+            try{
+                //update the balance
+                balance -= withdrawAmount;
+
+                //exception handling if balance < 0
+                if(balance < 0){
+                    throw new BalanceException(withdrawAmount);
+                }else{
+                    System.out.println("Successful..  Your withdrawal  : " + withdrawAmount + "/=");
+
+                    //store the transaction details
+                    addTransaction("123", LocalDate.now(), withdrawAmount, "withdraw");
+                }
+            }catch (BalanceException e){
+                e.printStackTrace();
+            }
+
         }else{
             System.out.println("Invalid amount... Please try again..");
         }
     }
+
+    public void addTransaction(String transID, LocalDate transDate, double amount, String transType){
+        Transactions transactions = new Transactions(transID, transDate, amount, transType);
+        transactionList.add(transactions);
+    }
+    //read transactions
+    public List<Transactions> getTransactionList(){
+        return transactionList;
+    }
+
 }
