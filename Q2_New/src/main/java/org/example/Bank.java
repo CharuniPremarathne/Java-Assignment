@@ -1,7 +1,6 @@
 package org.example;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 public class Bank {
@@ -15,7 +14,7 @@ public class Bank {
     }
 
     //add customers
-    public void addCustomer(String customerID, String customerName, String email, String phone) {
+    public void addCustomer(int customerID, String customerName, String email, String phone) {
 
         //create new customer
         try {
@@ -120,4 +119,5 @@ public class Bank {
         }
         return null;
     }
+
 }

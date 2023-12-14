@@ -46,7 +46,7 @@ public class BankApplication {
 
         //balance
         System.out.print("Enter Balance : ");
-        float balance = scanner.nextFloat();
+        double balance = scanner.nextDouble();
 
         //account type
         System.out.print("Enter Account Type : ");
@@ -83,5 +83,26 @@ public class BankApplication {
             System.out.print(bankAccount.getAccType() + " ");
             System.out.print(bankAccount.getBalance() + " ");
         }
+
+
+
+        /*
+             deposit and withdraw money
+         */
+
+        System.out.print("Enter your account number : ");
+        String accNum = scanner.nextLine();
+
+        //deposit money
+        System.out.print("Enter the amount you want to deposit : ");
+        double deposit = scanner.nextDouble();
+
+        bank.deposit(accNum, deposit);
+
+        //withdraw money
+        System.out.print("Enter the amount you want to withdraw : ");
+        double withdraw = scanner.nextDouble();
+
+        bank.withdraw(accNum, withdraw);
     }
 }

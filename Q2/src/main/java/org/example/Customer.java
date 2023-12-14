@@ -1,10 +1,10 @@
 package org.example;
 
 public class Customer {
-    String customerID;
-    String customerName;
-    String email;
-    String phone;
+    private String customerID;
+    private String customerName;
+    private String email;
+    private String phone;
 
     public Customer(String customerID, String customerName, String email, String phone) {
         this.customerID = customerID;

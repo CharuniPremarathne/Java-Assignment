@@ -76,7 +76,7 @@ public class BankAccount {
             System.out.println("Successful..  You deposited  : " + depositAmount + "/=");
 
             //store the transaction details
-            //addTransaction("124", LocalDate.now(), depositAmount, "deposit");
+            addTransaction("124", LocalDate.now(), depositAmount, "deposit");
             return balance;
         }else{
             System.out.println("Invalid amount... Please try again..");

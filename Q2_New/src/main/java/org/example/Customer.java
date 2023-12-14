@@ -1,10 +1,7 @@
 package org.example;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class Customer {
-    private String customerID;
+    private int customerID;
     private String customerName;
     private String email;
     private String phone;
@@ -12,7 +9,7 @@ public class Customer {
     //Bank account object
     private BankAccount bankAccount;
 
-    public Customer(String customerID, String customerName, String email, String phone) {
+    public Customer(int customerID, String customerName, String email, String phone) {
         this.customerID = customerID;
         this.customerName = customerName;
         this.email = email;
@@ -20,11 +17,11 @@ public class Customer {
         this.bankAccount = new BankAccount();
     }
 
-    public String getCustomerID() {
+    public int getCustomerID() {
         return customerID;
     }
 
-    public void setCustomerID(String customerID) {
+    public void setCustomerID(int customerID) {
         this.customerID = customerID;
     }
 
@@ -41,12 +38,7 @@ public class Customer {
     }
 
     public void setEmail(String email) {
-        if(validateEmail(email)){
-            this.email = email;
-        }else{
-            System.out.println("Invalid Pattern");
-        }
-
+        this.email = email;
     }
 
     public String getPhone() {
@@ -54,16 +46,11 @@ public class Customer {
     }
 
     public void setPhone(String phone) {
-        if(validatePhone(phone)){
-            this.phone = phone;
-        }else{
-            System.out.println("Invalid Input");
-        }
-
+        this.phone = phone;
     }
 
     //set bankAccount with the customer
-    public void setBankAccount(BankAccount bankAccount){
+    public void setBankAccount(BankAccount bankAccount) {
         this.bankAccount = bankAccount;
     }
 
@@ -71,15 +58,5 @@ public class Customer {
         return bankAccount;
     }
 
-    public boolean validateEmail(String email){
-        String valEmail = "^(.+)@(.+)$";
 
-        return email.matches(valEmail);
-    }
-
-    public boolean validatePhone(String phone){
-        String valPhone = "^[0-9]+$";
-
-        return phone.matches(valPhone);
-    }
 }

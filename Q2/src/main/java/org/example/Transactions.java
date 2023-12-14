@@ -3,12 +3,12 @@ package org.example;
 import java.util.Date;
 
 public class Transactions {
-    String transactionID;
-    Date transactionDate;
-    float transactionAmount;
-    String transactionType;
+    private String transactionID;
+    private Date transactionDate;
+    private double transactionAmount;
+    private String transactionType;
 
-    public Transactions(String transactionID, Date transactionDate, float transactionAmount, String transactionType){
+    public Transactions(String transactionID, Date transactionDate, double transactionAmount, String transactionType){
         this.transactionID = transactionID;
         this.transactionDate = transactionDate;
         this.transactionAmount = transactionAmount;
@@ -31,11 +31,11 @@ public class Transactions {
         this.transactionDate = transactionDate;
     }
 
-    public float getTransactionAmount() {
+    public double getTransactionAmount() {
         return transactionAmount;
     }
 
-    public void setTransactionAmount(float transactionAmount) {
+    public void setTransactionAmount(double transactionAmount) {
         this.transactionAmount = transactionAmount;
     }
 
