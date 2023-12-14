@@ -4,6 +4,7 @@ public class Truck extends Vehicle{
     private int bedLength;
     private double payLoadCapacity;
 
+    public Truck(){}
     public Truck(String make, String model, int year, String colour, double price, int bedLength, double payLoadCapacity) {
         super(make, model, year, colour, price);
         this.bedLength = bedLength;

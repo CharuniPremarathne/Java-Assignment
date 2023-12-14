@@ -13,6 +13,9 @@ public class Car extends Vehicle{
         this.isConvertible = isConvertible;
     }
 
+    public Car(){
+        super();
+    }
     public int getNumDoors() {
         return numDoors;
     }

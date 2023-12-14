@@ -15,6 +15,8 @@ public class Vehicle {
         this.price = price;
     }
 
+    public Vehicle(){}
+
     public String getMake() {
         return make;
     }
