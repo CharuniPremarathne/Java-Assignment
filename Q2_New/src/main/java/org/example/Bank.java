@@ -103,6 +103,7 @@ public class Bank {
                 return account;
             } else {
                 System.out.println("Account not found");
+                return null;
             }
         }
         return null;
@@ -115,6 +116,7 @@ public class Bank {
                 return customer;
             } else {
                 System.out.println("Customer not found");
+                return null;
             }
         }
         return null;

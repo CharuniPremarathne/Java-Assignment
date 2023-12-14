@@ -70,7 +70,15 @@ public class BankAccount {
 //    }
 
     public double depositMoney(double depositAmount){
-        if (depositAmount > 0){
+
+        if (depositAmount < 0) {
+            try {
+                throw new AmountException(depositAmount);
+            } catch (AmountException e) {
+                System.out.println("Invalid amount... Please try again..");
+                return 0;
+            }
+        }else{
             //update the balance
             balance += depositAmount;
             System.out.println("Successful..  You deposited  : " + depositAmount + "/=");
@@ -78,9 +86,6 @@ public class BankAccount {
             //store the transaction details
             addTransaction("124", LocalDate.now(), depositAmount, "deposit");
             return balance;
-        }else{
-            System.out.println("Invalid amount... Please try again..");
-            return 0;
         }
     }
 
@@ -119,7 +124,6 @@ public class BankAccount {
         }catch(NullPointerException e){
             e.printStackTrace();
         }
-
     }
     //read transactions
     public List<Transactions> getTransactionList(){
