@@ -18,5 +18,6 @@ public class Main {
 
         System.out.println("\n" + "Matching vehicles : " + inventory1.searchByMakeAndModel("Toyota", "Camry"));
 
+
     }
 }

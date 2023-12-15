@@ -1,5 +1,8 @@
 package org.example;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +10,8 @@ public class Bank {
     //customer and bank account lists
     private List<Customer> customerList;
     private List<BankAccount> bankAccountList;
+
+    private static final Logger logger = LoggerFactory.getLogger(Bank.class);
 
     public Bank() {
         this.customerList = new ArrayList<>();
@@ -72,7 +77,7 @@ public class Bank {
         try {
             account.depositMoney(depositAmount);
         } catch (NullPointerException e) {
-            System.out.println("Can't find Account");
+            logger.warn("Can't find Account");
         }
         //assert account != null;
 
@@ -89,11 +94,11 @@ public class Bank {
         try {
             account.withdrawMoney(withdrawAmount);
         } catch (NullPointerException e) {
-            System.out.println("Can't find Account");
+            logger.warn("Can't find Account");
         }
 
         //display balance
-        System.out.println("Your current balance is  : " + account.getBalance());
+        logger.info("Your current balance is  : " + account.getBalance());
     }
 
     //find the account (deposit or withdrawal) by account number
@@ -102,7 +107,7 @@ public class Bank {
             if (account.getAccNumber() == accNumber) {
                 return account;
             } else {
-                System.out.println("Account not found");
+                logger.warn("Account not found");
                 return null;
             }
         }
@@ -115,7 +120,7 @@ public class Bank {
             if (customer.getEmail().equals(email)) {
                 return customer;
             } else {
-                System.out.println("Customer not found");
+                logger.warn("Customer not found");
                 return null;
             }
         }

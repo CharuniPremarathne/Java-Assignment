@@ -1,9 +1,14 @@
 package org.example;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+    private static final Logger logger = LoggerFactory.getLogger(Main.class);
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -39,6 +44,8 @@ public class Main {
         int desIndex = stationList.indexOf(destinationStation);
 
         System.out.println("======================================");
+
+        logger.info("Station Details");
 
         for(int i = startIndex; i <= desIndex; i++){
             System.out.println(stationList.get(i));

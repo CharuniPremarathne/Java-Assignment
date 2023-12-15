@@ -1,5 +1,10 @@
 package org.example;
 
+
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -7,6 +12,9 @@ import java.util.Scanner;
 
 public class Inventory {
     private Vehicle[] vehicles;
+
+    private static final Logger logger = LoggerFactory.getLogger(Inventory.class);
+
 
     public Inventory(int size) {
         vehicles = new Vehicle[size];
@@ -54,7 +62,7 @@ public class Inventory {
             avg = total / count;
             System.out.println("The average price of a vehicle is : " + avg);
         } else {
-            System.out.println("Incorrect count");
+            logger.warn("Incorrect count");
         }
         return avg;
 

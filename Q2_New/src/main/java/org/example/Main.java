@@ -1,9 +1,15 @@
 package org.example;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+
+    private static final Logger logger = LoggerFactory.getLogger(Main.class);
+
     public static void main(String[] args) {
 
         //creating the bank instance
@@ -21,7 +27,7 @@ public class Main {
 
             //Input customer details
 
-            System.out.println("====== Customer Details ======");
+            logger.info("====== Customer Details ======");
 
             //customer name
             System.out.print("Enter your name : ");
@@ -34,7 +40,7 @@ public class Main {
             if (validateEmail(email)) {
                 valEmail = email;
             } else {
-                System.out.println("Invalid Pattern");
+                logger.warn("Invalid Pattern");
                 break;
             }
 
@@ -45,7 +51,7 @@ public class Main {
             if (validatePhone(phone)) {
                 valPhone = phone;
             } else {
-                System.out.println("Invalid Pattern");
+                logger.warn("Invalid Pattern");
                 break;
             }
 
@@ -78,17 +84,17 @@ public class Main {
                     String accountType = customer.getBankAccount().getAccType();
                     Double balance = customer.getBankAccount().getBalance();
 
+                    logger.info("\n" + "===== Bank account created successfully =====");
 
-                    System.out.println("\n" + "===== Bank account created successfully =====");
                     //print details
                     System.out.println();
-                    System.out.println("===== Customer Details =====");
+                    logger.info("===== Customer Details =====");
                     System.out.println("Name : " + customer.getCustomerName());
                     System.out.println("Email : " + customer.getEmail() + " ");
                     System.out.println("Contact : " + customer.getPhone());
 
                     System.out.println();
-                    System.out.println("===== Bank Account Details =====");
+                    logger.info("===== Bank Account Details =====");
                     System.out.println("Account Holders Number : " + accNum);
                     System.out.println("Account Holders Name : " + holderName);
                     System.out.println("Balance : " + balance);
@@ -96,7 +102,7 @@ public class Main {
 
                     bank.addBankAccount(accNum, holderName, balance, accountType);
 
-                    System.out.print("\n" + "Do you want to create another bank account(y/n) : ");
+                    System.out.println("\n" + "Do you want to create another bank account(y/n) : ");
                     String res = scanner.next();
 
                     if (res.equalsIgnoreCase("y")) {
@@ -106,7 +112,7 @@ public class Main {
                     }
                 }
 
-                System.out.println("\n" + "====== Enter the number of the action ======");
+                logger.info("\n" + "====== Enter the number of the action ======");
                 System.out.println("1. Deposit Money");
                 System.out.println("2. Withdraw Money");
                 System.out.println("3. View List of Bank Accounts");
@@ -132,7 +138,7 @@ public class Main {
                                     bank.deposit(accNumberD, deposit);
                                 }
                             } catch (AmountException e) {
-                                System.out.println("\n" + "Invalid amount");
+                                logger.error("\n" + "Invalid amount");
                             }
 
                             break;
@@ -154,7 +160,7 @@ public class Main {
                                     bank.withdraw(accNumberW, withdraw);
                                 }
                             } catch (AmountException e) {
-                                System.out.println("\n" + "Invalid Amount");
+                                logger.error("\n" + "Invalid Amount");
                             }
                             //withdraw money
 //                        System.out.print("Enter the amount you want to withdraw : ");
@@ -172,7 +178,7 @@ public class Main {
                                 System.out.print("\t" + account.getAccType());
                                 System.out.println("\t" + account.getBalance());
 
-                                System.out.println("\n" + "Transaction details");
+                                logger.info("\n" + "Transaction details");
 
                                 for(Transactions t: account.getTransactionList()){
                                     System.out.print(t.getTransactionID());
@@ -184,7 +190,7 @@ public class Main {
                             break;
                     }
 
-                    System.out.println("\n" + "====== Enter the number of the action ======");
+                    logger.info("\n" + "====== Enter the number of the action ======");
                     System.out.println("1. Deposit Money");
                     System.out.println("2. Withdraw Money");
                     System.out.println("3. View List of Bank Accounts");
@@ -194,7 +200,7 @@ public class Main {
                 }
             }
 
-            System.out.println("\n" + "Add another customer(y/n) : ");
+            logger.info("\n" + "Add another customer(y/n) : ");
             resp = scanner.next();
         }
         //list of bank accounts

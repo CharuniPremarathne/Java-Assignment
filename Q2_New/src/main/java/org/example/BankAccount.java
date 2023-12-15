@@ -1,8 +1,12 @@
 package org.example;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class BankAccount {
     private int accNumber;
@@ -12,6 +16,9 @@ public class BankAccount {
 
     //transaction object
     List<Transactions> transactionList;
+
+    private static final Logger logger = LoggerFactory.getLogger(BankAccount.class);
+
 
     //default constructor
     public BankAccount(){}
@@ -75,13 +82,13 @@ public class BankAccount {
             try {
                 throw new AmountException(depositAmount);
             } catch (AmountException e) {
-                System.out.println("Invalid amount... Please try again..");
+                logger.error("Invalid amount... Please try again..");
                 return 0;
             }
         }else{
             //update the balance
             balance += depositAmount;
-            System.out.println("Successful..  You deposited  : " + depositAmount + "/=");
+            logger.info("Successful..  You deposited  : " + depositAmount + "/=");
 
             //store the transaction details
             addTransaction("124", LocalDate.now(), depositAmount, "deposit");
@@ -101,7 +108,7 @@ public class BankAccount {
                 if(balance < 0){
                     throw new BalanceException(withdrawAmount);
                 }else{
-                    System.out.println("Successful..  Your withdrawal  : " + withdrawAmount + "/=");
+                    logger.info("Successful..  Your withdrawal  : " + withdrawAmount + "/=");
 
                     //store the transaction details
                     addTransaction("123", LocalDate.now(), withdrawAmount, "withdraw");
@@ -112,7 +119,7 @@ public class BankAccount {
             }
             return balance;
         }else{
-            System.out.println("Invalid amount... Please try again..");
+            logger.error("Invalid amount... Please try again..");
             return 0;
         }
     }
