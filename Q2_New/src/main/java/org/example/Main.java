@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Main {
 
@@ -57,7 +58,8 @@ public class Main {
 
             bank.addCustomer(cusID++, customerName, valEmail, valPhone);
 
-            //retrieve customer and bank accounts lists of object "bank"
+            //retrieve customer lists of object "bank"
+
             List<Customer> customersList = bank.getCustomerList();
 
             Boolean response = true;
@@ -95,7 +97,7 @@ public class Main {
 
                     System.out.println();
                     logger.info("===== Bank Account Details =====");
-                    System.out.println("Account Holders Number : " + accNum);
+                    System.out.println("Account Number : " + accNum);
                     System.out.println("Account Holders Name : " + holderName);
                     System.out.println("Balance : " + balance);
                     System.out.println("Account Type : " + accountType);
@@ -116,11 +118,12 @@ public class Main {
                 System.out.println("1. Deposit Money");
                 System.out.println("2. Withdraw Money");
                 System.out.println("3. View List of Bank Accounts");
-                System.out.println("4. Exit");
+                System.out.println("4. Remove Bank Account");
+                System.out.println("5. Exit");
 
                 int menu = scanner.nextInt();
 
-                while (menu != 4) {
+                while (menu != 5) {
                     switch (menu) {
                         case 1:
                             //read account number
@@ -173,12 +176,13 @@ public class Main {
                         case 3:
 
                             //list of bank accounts
+                            logger.info("=== Bank Account details ===");
                             for (BankAccount account : bank.getBankAccountList()) {
                                 System.out.print(account.getAccNumber());
                                 System.out.print("\t" + account.getAccType());
                                 System.out.println("\t" + account.getBalance());
 
-                                logger.info("\n" + "Transaction details");
+                                logger.info("\n" + "===== Transaction details =====");
 
                                 for(Transactions t: account.getTransactionList()){
                                     System.out.print(t.getTransactionID());
@@ -186,15 +190,24 @@ public class Main {
                                     System.out.print("\t" + t.getTransactionDate());
                                     System.out.println("\t" + t.getTransactionAmount());
                                 }
+                                System.out.println("\n");
                             }
+
+
                             break;
+                        case 4:
+                            System.out.println("Enter Bank Account you want to remove : ");
+                            int accR = scanner.nextInt();
+
+                            bank.removeBankAccount(accR);
                     }
 
                     logger.info("\n" + "====== Enter the number of the action ======");
                     System.out.println("1. Deposit Money");
                     System.out.println("2. Withdraw Money");
                     System.out.println("3. View List of Bank Accounts");
-                    System.out.println("4. Exit");
+                    System.out.println("4. Remove Bank Account");
+                    System.out.println("5. Exit");
 
                     menu = scanner.nextInt();
                 }
@@ -203,7 +216,9 @@ public class Main {
             logger.info("\n" + "Add another customer(y/n) : ");
             resp = scanner.next();
         }
-        //list of bank accounts
+
+        logger.info("=== Customer details ===");
+        //list of customers
         for (Customer cus : bank.getCustomerList()) {
             System.out.print(cus.getCustomerID());
             System.out.print("\t" + cus.getCustomerName());

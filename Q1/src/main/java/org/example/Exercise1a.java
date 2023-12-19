@@ -5,7 +5,7 @@ public class Exercise1a {
         int x = 1;
 
         while (x < 10){
-            if(x < 3){
+            if(x > 3){
                 System.out.println("big x");
             }
 

@@ -98,7 +98,7 @@ public class BankAccount {
 
     //withdraw money
     public double withdrawMoney(double withdrawAmount){
-        if (withdrawAmount > 0 && balance >= withdrawAmount){
+        if (withdrawAmount > 0){
 
             try{
                 //update the balance
@@ -106,7 +106,7 @@ public class BankAccount {
 
                 //exception handling if balance < 0
                 if(balance < 0){
-                    throw new BalanceException(withdrawAmount);
+                    throw new AmountException(withdrawAmount);
                 }else{
                     logger.info("Successful..  Your withdrawal  : " + withdrawAmount + "/=");
 
@@ -114,7 +114,7 @@ public class BankAccount {
                     addTransaction("123", LocalDate.now(), withdrawAmount, "withdraw");
                 }
 
-            }catch (BalanceException e){
+            }catch (AmountException e){
                 e.printStackTrace();
             }
             return balance;

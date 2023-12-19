@@ -20,14 +20,9 @@ public class Bank {
 
     //add customers
     public void addCustomer(int customerID, String customerName, String email, String phone) {
-
         //create new customer
-        try {
-            Customer customer = new Customer(customerID, customerName, email, phone);
-            customerList.add(customer);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Customer customer = new Customer(customerID, customerName, email, phone);
+        customerList.add(customer);
     }
 
     //remove customer
@@ -38,13 +33,8 @@ public class Bank {
 
     //add bank account
     public void addBankAccount(int accNumber, String accHolderName, double balance, String accType) {
-        try{
-            BankAccount bankAccount = new BankAccount(accNumber, accHolderName, balance, accType);
-            bankAccountList.add(bankAccount);
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-
+        BankAccount bankAccount = new BankAccount(accNumber, accHolderName, balance, accType);
+        bankAccountList.add(bankAccount);
     }
 
 //    //add bank account
@@ -56,6 +46,7 @@ public class Bank {
     public void removeBankAccount(int accNumber) {
         BankAccount account = findAccount(accNumber);
         bankAccountList.remove(account);
+        logger.info("Successfully Removed the account");
     }
 
     //return list of customer details
@@ -103,28 +94,35 @@ public class Bank {
 
     //find the account (deposit or withdrawal) by account number
     public BankAccount findAccount(int accNumber) {
+        BankAccount acc = null;
+
         for (BankAccount account : bankAccountList) {
             if (account.getAccNumber() == accNumber) {
-                return account;
+                acc = account;
+                break;
             } else {
-                logger.warn("Account not found");
-                return null;
+                try {
+                    acc = null;
+                } catch (Exception e) {
+                    logger.warn("Account not found");
+                }
             }
         }
-        return null;
+        return acc;
     }
 
     //find the customer
     public Customer findCustomer(String email) {
+        Customer cus = null;
         for (Customer customer : customerList) {
             if (customer.getEmail().equals(email)) {
-                return customer;
+                cus = customer;
+                break;
             } else {
                 logger.warn("Customer not found");
-                return null;
+                cus = null;
             }
         }
-        return null;
+        return cus;
     }
-
 }

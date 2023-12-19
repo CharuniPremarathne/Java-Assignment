@@ -41,6 +41,7 @@ public class Main {
         String destinationStation = scanner.nextLine();
 
         int startIndex = stationList.indexOf(startStation);
+
         int desIndex = stationList.indexOf(destinationStation);
 
         System.out.println("======================================");

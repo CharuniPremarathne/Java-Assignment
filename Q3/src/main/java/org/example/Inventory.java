@@ -1,7 +1,6 @@
 package org.example;
 
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -65,26 +64,45 @@ public class Inventory {
             logger.warn("Incorrect count");
         }
         return avg;
-
     }
 
     //search the matching vehicles by make and model
     public List<Vehicle> searchByMakeAndModel(String make, String model) {
         List<Vehicle> matchingVehicles = new ArrayList<>();
 
-        try{
+        int flag = 0;
+
+        try {
             for (Vehicle vehicle : vehicles) {
-                if (vehicle.getMake().equals(make) && vehicle.getModel().equals(model)) {
+                if (vehicle.getMake().equalsIgnoreCase(make) && vehicle.getModel().equalsIgnoreCase(model)) {
                     matchingVehicles.add(vehicle);
+                }else{
+                    System.out.println("Make or Model is incorrect for : " + vehicle.getMake());
                 }
             }
-        }catch (NullPointerException e){
+//            for (Vehicle v : vehicles) {
+//                if (v.getMake().equals(make)) {
+//                    flag++;
+//
+//                    if (v.getModel().equals(model)) {
+//                        flag++;
+//                    } else {
+//                        System.out.println("Model is incorrect");
+//                    }
+//                } else {
+//                    System.out.println("Make is incorrect");
+//                }
+//
+//                if (flag == 2) {
+//                    matchingVehicles.add(v);
+//                }
+//            }
+
+
+        } catch (NullPointerException e) {
             e.printStackTrace();
         }
 
-
-        System.out.print(Arrays.toString(matchingVehicles.toArray(new Vehicle[0])));
-        //System.out.print(matchingVehicles.toArray(new Vehicle[0]));
         return matchingVehicles;
     }
 }

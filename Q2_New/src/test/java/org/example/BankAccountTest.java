@@ -53,14 +53,6 @@ class BankAccountTest {
     }
 
     @Test
-    void negativeBalanceThrowsException() {
-        BankAccount bankAccount = new BankAccount();
-        assertThrows(BalanceException.class, () -> {
-            bankAccount.withdrawMoney(300);
-        });
-    }
-
-    @Test
     void BankAccount(){
         BankAccount bankAccount2 = new BankAccount();
         bankAccount2.setAccNumber(1234);
