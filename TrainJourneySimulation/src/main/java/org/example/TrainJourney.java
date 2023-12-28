@@ -1,5 +1,8 @@
 package org.example;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -8,6 +11,8 @@ public class TrainJourney {
 
     private int startSt;
     private int stopSt;
+
+    private static final Logger logger = LoggerFactory.getLogger(TrainJourney.class);
 
     public TrainJourney(int startSt, int stopSt) {
         this.startSt = startSt;
@@ -71,9 +76,9 @@ public class TrainJourney {
 //        }
 
         //display shortest path
-        System.out.print("Shortest Path : ");
+        logger.info("Shortest Path : ");
         printPath(shortestPath, destSt);
-        System.out.println("\nDistance : " + vertexDisArray[destSt]);
+        logger.info("\nDistance : " + vertexDisArray[destSt]);
 
         //return vertexDisArray[destSt];
     }

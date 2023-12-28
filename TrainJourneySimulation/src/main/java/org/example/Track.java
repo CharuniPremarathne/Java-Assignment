@@ -1,9 +1,14 @@
 package org.example;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Track {
 
     public Station first;
     public Station last;
+
+    private static final Logger logger = LoggerFactory.getLogger(Track.class);
 
     public Track(Station first, Station last) {
         this.first = first;
@@ -32,7 +37,7 @@ public class Track {
         Station current = first;
 
         if (first == null) {
-            System.out.println("The list is empty");
+            logger.info("The list is empty");
         }
         while (current != null) {
             System.out.print(current.getStationNo() + "\t");

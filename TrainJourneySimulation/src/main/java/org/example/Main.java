@@ -1,9 +1,13 @@
 package org.example;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.*;
 
 public class Main {
+    private static final Logger logger = LoggerFactory.getLogger(Main.class);
     public static void main(String[] args) {
 
         Edge e1 = new Edge(0, 1, 6);
@@ -57,7 +61,7 @@ public class Main {
 //        List<Track> trackList = new ArrayList<>();
 
 
-        System.out.println("Display Track");
+        logger.info("Display Track");
         System.out.print("Start : ");
         int start = scanner.nextInt();
 
@@ -77,7 +81,7 @@ public class Main {
         }
 
         //display track
-        System.out.print("Track : ");
+        logger.info("Track : ");
         track.displayTrack();
 
 
@@ -117,7 +121,7 @@ public class Main {
         trainShedule.addTrain(new Train(4, "shortDis", 05.00f, stationList1));
 
         //display train schedule
-        System.out.println("\n\nTrain Schedule");
+        logger.info("\n\nTrain Schedule");
         trainShedule.displayTrains();
 
         Map<Station, List<Train>> trainList = new HashMap<>();
@@ -133,7 +137,7 @@ public class Main {
         }
 
 
-        System.out.println("\n\nArrival Priority");
+        logger.info("\n\nArrival Priority");
         for (Map.Entry<Station, List<Train>> listEntry : trainList.entrySet()) {
             Station station = listEntry.getKey();
             List<Train> trains = listEntry.getValue();
@@ -149,7 +153,7 @@ public class Main {
 //        }
 
 
-        System.out.println("Create Passenger Queue");
+        logger.info("Create Passenger Queue");
 
         Queue queue = new Queue(50);
 
@@ -191,11 +195,11 @@ public class Main {
         }
 
         //display queue
-        System.out.println("Passenger Queue");
+        logger.info("Passenger Queue");
         System.out.println(queue.peekFront());
 
 
-        System.out.println("\nPassenger Count");
+        logger.info("\nPassenger Count");
         int pssCount = 0;
         //display the output
         for (int station : passengerCount.keySet()) {

@@ -1,5 +1,8 @@
 package org.example;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +11,8 @@ public class TrainShedule {
 
     public Train first = null;
     public Train last = null;
+
+    private static final Logger logger = LoggerFactory.getLogger(TrainShedule.class);
 
     public void addTrain(Train train){
         //Train newTrain = new Train(train.getTrainNo(), train.getTrainType(), train.getTime());
@@ -27,7 +32,7 @@ public class TrainShedule {
         Train current = first;
 
         if (first == null) {
-            System.out.println("The list is empty");
+            logger.info("The list is empty");
         } else {
             do {
                 System.out.print(current.getTrainNo() + " ");
@@ -41,7 +46,7 @@ public class TrainShedule {
         Train current = first;
 
         if (first == null) {
-            System.out.println("The list is empty");
+            logger.info("The list is empty");
             t1 = null;
         } else {
             do {

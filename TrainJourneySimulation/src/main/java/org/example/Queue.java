@@ -1,5 +1,7 @@
 package org.example;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 public class Queue {
 
     private int maxSize;
@@ -7,6 +9,8 @@ public class Queue {
     private int rear;
     private int nPassengers;
     private Passenger[] passengers;
+
+    private static final Logger logger = LoggerFactory.getLogger(Queue.class);
 
     public Queue(int max) {
         maxSize = max;
@@ -26,7 +30,7 @@ public class Queue {
 
     public void insertPassenger(Passenger passenger) {
         if (rear == maxSize - 1) {
-            System.out.println("Train is full");
+            logger.info("Train is full");
         } else {
             passengers[++rear] = passenger;
             nPassengers++;
@@ -35,7 +39,7 @@ public class Queue {
 
     public Passenger peekFront(){
         if(nPassengers == 0){
-            System.out.println("Queue is empty");
+            logger.info("Queue is empty");
             return null;
         }
         else{
