@@ -6,7 +6,6 @@ import java.util.List;
 //circular linked list
 public class TrainShedule {
 
-    private ArrayList<Train> trains;
     public Train first = null;
     public Train last = null;
 

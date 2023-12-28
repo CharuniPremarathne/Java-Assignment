@@ -2,12 +2,12 @@ package org.example;
 
 public class Track {
 
-    public Station first = null;
-    public Station last = null;
+    public Station first;
+    public Station last;
 
     public Track(Station first, Station last) {
-        this.first = null;
-        this.last = null;
+        this.first = first;
+        this.last = last;
     }
 
     public void createTrack(Station station) {

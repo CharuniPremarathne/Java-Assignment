@@ -30,16 +30,8 @@ public class Train implements Comparable<Train>{
         return trainNo;
     }
 
-    public void setTrainNo(int trainNo) {
-        this.trainNo = trainNo;
-    }
-
     public String getTrainType() {
         return trainType;
-    }
-
-    public void setTrainType(String trainType) {
-        this.trainType = trainType;
     }
 
     public float getTime() {
@@ -48,23 +40,6 @@ public class Train implements Comparable<Train>{
 
     public List<Station> getStationList() {
         return stationList;
-    }
-
-    public void setStationList(List<Station> stationList) {
-        this.stationList = stationList;
-    }
-
-    public void setTime(float time) {
-        this.time = time;
-    }
-
-
-    public int getPriority() {
-        return priority;
-    }
-
-    public void setPriority(int priority) {
-        this.priority = priority;
     }
 
     @Override

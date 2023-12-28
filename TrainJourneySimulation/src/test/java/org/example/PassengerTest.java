@@ -39,4 +39,12 @@ class PassengerTest {
 
         assertEquals(6,adjMatrix[0][1]);
     }
+
+    @Test
+    void testGetters(){
+        Passenger p1 = new Passenger(0,3);
+
+        assertEquals(0, p1.getStartSt());
+        assertEquals(3, p1.getDestSt());
+    }
 }

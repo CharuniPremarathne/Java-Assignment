@@ -33,33 +33,10 @@ public class Station {
         return stationNo;
     }
 
-//    public void setStationNo(int stationNo) {
-//        this.stationNo = stationNo;
-//    }
-//
-//    public String getStationName() {
-//        return stationName;
-//    }
-//
-//    public void setStationName(String stationName) {
-//        this.stationName = stationName;
-//    }
-
     public float getDistance() {
         return distance;
     }
 
-//    public void setDistance(float distance) {
-//        this.distance = distance;
-//    }
-
-    public List<Station> getConnectedStations() {
-        return connectedStations;
-    }
-
-//    public void setConnectedStations(List<Station> connectedStations) {
-//        this.connectedStations = connectedStations;
-//    }
 
 
     public void trainArrivals(List<Train> trains){

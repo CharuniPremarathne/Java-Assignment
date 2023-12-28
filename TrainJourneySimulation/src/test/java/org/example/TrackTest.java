@@ -2,6 +2,9 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class TrackTest {
@@ -18,7 +21,7 @@ class TrackTest {
     }
 
     @Test
-    void testCreateTest() {
+    void testCreateList() {
         Station[] stArray = {st1, st2, st3, st4, st5};
 
         //Track track;
