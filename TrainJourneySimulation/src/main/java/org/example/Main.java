@@ -82,15 +82,18 @@ public class Main {
 
         ///create train schedule
         TrainShedule trainShedule = new TrainShedule();
-        trainShedule.addTrain(new Train(0, "longDis", 01.00f, stationList1));
-        trainShedule.addTrain(new Train(1, "shortDis", 02.00f, stationList2));
-        trainShedule.addTrain(new Train(2, "express", 03.00f, stationList1));
-        trainShedule.addTrain(new Train(3, "longDis", 04.00f, stationList2));
-        trainShedule.addTrain(new Train(4, "shortDis", 05.00f, stationList1));
+        trainShedule.addTrain(new Train(0, "longDis", stationList1));
+        trainShedule.addTrain(new Train(1, "shortDis", stationList2));
+        trainShedule.addTrain(new Train(2, "express", stationList1));
+        trainShedule.addTrain(new Train(3, "longDis", stationList2));
+        trainShedule.addTrain(new Train(4, "shortDis", stationList1));
 
         //display train schedule
         logger.info("\n\nTrain Schedule");
-        trainShedule.displayTrains();
+
+        for(Train t: trainShedule.displayTrains()){
+            System.out.println(t.getTrainNo());
+        }
 
         Map<Station, List<Train>> trainList = new HashMap<>();
 

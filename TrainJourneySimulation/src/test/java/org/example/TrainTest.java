@@ -16,18 +16,17 @@ class TrainTest {
         stationList1.add(1, new Station(2));
         stationList1.add(2, new Station(3));
 
-        Train train = new Train(1, "express", 01.00f, stationList1);
+        Train train = new Train(1, "express", stationList1);
 
         assertEquals(1, train.getTrainNo());
         assertEquals("express", train.getTrainType());
-        assertEquals(01.00f, train.getTime());
         assertEquals(stationList1, train.getStationList());
     }
 
     @Test
     void testCompareTo(){
 
-        Train train = new Train(1, "express", 01.00f);
+        Train train = new Train(1, "express");
 
         assertEquals(0,train.compareTo(train));
     }

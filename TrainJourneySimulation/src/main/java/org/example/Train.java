@@ -7,22 +7,18 @@ import java.util.List;
 public class Train implements Comparable<Train>{
     private int trainNo;
     private String trainType;
-    private float time;
 
     private List<Station> stationList;
     public Train next;
-    int priority;
 
-    public Train(int trainNo, String trainType, float time) {
+    public Train(int trainNo, String trainType) {
         this.trainNo = trainNo;
         this.trainType = trainType;
-        this.time = time;
     }
 
-    public Train(int trainNo, String trainType, float time, List<Station> stationList) {
+    public Train(int trainNo, String trainType,List<Station> stationList) {
         this.trainNo = trainNo;
         this.trainType = trainType;
-        this.time = time;
         this.stationList = stationList;
     }
 
@@ -34,9 +30,6 @@ public class Train implements Comparable<Train>{
         return trainType;
     }
 
-    public float getTime() {
-        return time;
-    }
 
     public List<Station> getStationList() {
         return stationList;
