@@ -10,28 +10,12 @@ public class Main {
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
     public static void main(String[] args) {
 
-        Edge e1 = new Edge(0, 1, 6);
-        Edge e2 = new Edge(0, 4, 12);
-        Edge e3 = new Edge(1, 2, 7);
-        Edge e4 = new Edge(1, 0, 6);
-        Edge e5 = new Edge(2, 3, 9);
-        Edge e6 = new Edge(2, 1, 7);
-        Edge e7 = new Edge(2, 4, 8);
-        Edge e8 = new Edge(3, 2, 9);
-        Edge e9 = new Edge(3, 4, 10);
-        Edge e10 = new Edge(4, 3, 10);
-        Edge e11 = new Edge(4, 2, 8);
-        Edge e12 = new Edge(4, 0, 12);
-
-        List<Edge> edges = Arrays.asList(e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11, e12);
-
-        Graph newGraph = new Graph();
-
-        newGraph.createGraph(edges);
-
-        newGraph.printStationList(newGraph);
-
         Scanner scanner = new Scanner(System.in);
+
+//        boolean response = true;
+//        //create new track
+//        List<Track> trackList = new ArrayList<>();
+
 
         //Station List
         List<Station> stations = new ArrayList<>();
@@ -40,26 +24,6 @@ public class Main {
         stations.add(new Station(2, 3.0f));
         stations.add(new Station(3, 4.0f));
         stations.add(new Station(4, 5.0f));
-
-        try {
-            for (Station st : stations) {
-                System.out.print("Station : " + st.getStationNo() + " --> ");
-                List<Station> st1 = newGraph.stationList.get(st.getStationNo());
-
-                for (Station stCon : st1) {
-                    System.out.print(stCon.getStationNo() + "\t");
-                }
-                System.out.println();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
-//        boolean response = true;
-//        //create new track
-//        List<Track> trackList = new ArrayList<>();
-
 
         logger.info("Display Track");
         System.out.print("Start : ");
@@ -102,6 +66,10 @@ public class Main {
 //
 //        Passenger p1 = new Passenger(startStation, desStation);
 //        p1.createTrainJourney(stations, adjMatrix, startStation, desStation);
+
+        logger.info("Traversal List");
+        Graph newGraph = new Graph();
+        newGraph.graphTraversal(adjMatrix);
 
         List<Station> stationList1 = new ArrayList<>();
         stationList1.add(0, stations.get(0));
