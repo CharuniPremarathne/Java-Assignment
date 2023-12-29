@@ -26,4 +26,11 @@ class QueueTest {
         assertEquals(p1,q.peekFront());
     }
 
+    @Test
+    void testNullQueue(){
+        Queue q1 = new Queue(0);
+
+        assertEquals(null, q1.peekFront());
+    }
+
 }

@@ -1,18 +1,18 @@
 package org.example;
 
 import org.junit.jupiter.api.Test;
-
-import java.util.LinkedList;
-import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class TrackTest {
+    private static final Logger logger = LoggerFactory.getLogger(TrackTest.class);
 
-    Station st1, st2, st3, st4, st5;
-    Station st6 = new Station(6, 1.00f);
-    Station st7 = new Station(7, 1.00f);
-    Track track = new Track(st6, st7);
+    Station st1 = new Station(1, 1.00f);
+    Station st2 = new Station(2, 1.00f);
+    Station st3 = new Station(3, 1.00f);
+    Track track = new Track();
 
     @Test
     void testConstructor() {
@@ -21,15 +21,41 @@ class TrackTest {
     }
 
     @Test
-    void testCreateList() {
-        Station[] stArray = {st1, st2, st3, st4, st5};
+    void testCreateNewList() {
 
-        //Track track;
+        track.createTrack(st1);
 
-        for (int i = 0; i < stArray.length; i++) {
-            track.createTrack(stArray[i]);
-        }
+        assertEquals(st1, track.first);
+        assertEquals(st1, track.last);
+        assertNull(st1.previous);
+        assertNull(st1.next);
+    }
 
-        assertNotNull(track);
+    @Test
+    void testCreateList(){
+        track.createTrack(st1);
+        track.createTrack(st2);
+        track.createTrack(st3);
+
+        assertEquals(st2, st3.previous);
+        assertEquals(st1, st2.previous);
+        assertNull(st3.next);
+        assertNull(st1.previous);
+    }
+
+    @Test
+    void testDisplayTrackEmptyList(){
+        Track t1 = new Track();
+
+        assertEquals(null,t1.displayTrack());
+    }
+
+    @Test
+    void testDisplayTrack(){
+        track.createTrack(st1);
+        track.createTrack(st2);
+        track.createTrack(st3);
+
+        assertEquals(3, track.displayTrack().size());
     }
 }

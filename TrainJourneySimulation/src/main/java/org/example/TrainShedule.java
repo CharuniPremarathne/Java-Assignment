@@ -28,18 +28,21 @@ public class TrainShedule {
         }
     }
 
-    public void displayTrains(){
-        Train current = first;
-
-        if (first == null) {
-            logger.info("The list is empty");
-        } else {
-            do {
-                System.out.print(current.getTrainNo() + " ");
-                current = current.next;
-            }while (current != first);
-        }
-    }
+//    public List<Train> displayTrains(){
+//        Train current = first;
+//        List<Train> trains = new ArrayList<>();
+//
+//        if (first == null) {
+//            logger.info("The list is empty");
+//        } else {
+//            do {
+//                //System.out.print(current.getTrainNo() + " ");
+//                trains.add(current);
+//                current = current.next;
+//            }while (current != first);
+//        }
+//        return trains;
+//    }
 
     public List<Train> getTrains(){
         List<Train> t1 = new ArrayList<>();
@@ -47,7 +50,7 @@ public class TrainShedule {
 
         if (first == null) {
             logger.info("The list is empty");
-            t1 = null;
+            return null;
         } else {
             do {
                 //System.out.print(current.getTrainNo() + " ");

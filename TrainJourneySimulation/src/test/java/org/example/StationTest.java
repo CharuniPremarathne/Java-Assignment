@@ -20,9 +20,9 @@ class StationTest {
 
     @Test
     void testTrainArrivals(){
-        Train t1 = new Train(1, "longDis", 01.00f);
-        Train t2 = new Train(2, "express", 02.00f);
-        Train t3 = new Train(3, "shortDis", 03.00f);
+        Train t1 = new Train(1, "longDis");
+        Train t2 = new Train(2, "express");
+        Train t3 = new Train(3, "shortDis");
 
         List<Train> trains = new ArrayList<>();
 
@@ -31,7 +31,5 @@ class StationTest {
         trains.add(t3);
 
         Station st1 = new Station(1);
-
-
     }
 }

@@ -2,7 +2,7 @@ package org.example;
 
 public class Graph {
 
-    private static boolean[] visited;
+    public boolean[] visited;
 
     public void graphTraversal(int[][] adjMatrix) {
         int startNode = 0;
@@ -11,7 +11,7 @@ public class Graph {
         depthFirstSearch(startNode, adjMatrix);
     }
 
-    private void depthFirstSearch(int node, int[][] adjMatrix) {
+    public void depthFirstSearch(int node, int[][] adjMatrix) {
         System.out.println(node);
         visited[node] = true;
         for (int i = 0; i < adjMatrix[node].length; i++) {

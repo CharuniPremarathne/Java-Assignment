@@ -8,6 +8,7 @@ import java.util.*;
 
 public class Main {
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
+
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -32,21 +33,24 @@ public class Main {
         System.out.print("Stop : ");
         int stop = scanner.nextInt();
 
-        Track track = new Track(new Station(start), new Station(stop));
+        Track track = new Track();
 
         if (start < stop) {
             for (int i = start; i <= stop; i++) {
                 track.createTrack(stations.get(i));
             }
         } else if (stop < start) {
-            for (int i = stop; i >= start; i--) {
+            for (int i = start; i >= stop; i--) {
                 track.createTrack(stations.get(i));
             }
         }
 
         //display track
         logger.info("Track : ");
-        track.displayTrack();
+        for (Station st : track.displayTrack()) {
+            System.out.print(st.getStationNo() + "\t");
+        }
+        System.out.println("\n");
 
 
         int adjMatrix[][] = {
@@ -91,7 +95,7 @@ public class Main {
         //display train schedule
         logger.info("\n\nTrain Schedule");
 
-        for(Train t: trainShedule.displayTrains()){
+        for (Train t : trainShedule.getTrains()) {
             System.out.println(t.getTrainNo());
         }
 

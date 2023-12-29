@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25da4dd9-a0dc-4884-8902-db6e539b943f" name="Changes" comment="added loggers">
+    <list default="true" id="25da4dd9-a0dc-4884-8902-db6e539b943f" name="Changes" comment="constructor modifications">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/GraphTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TrainShedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TrainShedule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/QueueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/QueueTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/StationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/StationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/TrainSheduleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/TrainSheduleTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,8 +70,8 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="PassengerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.TrainSheduleTest.testNullList">
+    <configuration name="GraphTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -80,7 +84,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.PassengerTest&quot;" />
+            <option value="&quot;org.example.GraphTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -90,7 +94,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="QueueTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TrainSheduleTest.testCreateList" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -103,7 +107,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.QueueTest&quot;" />
+            <option value="&quot;org.example.TrainSheduleTest.testCreateList&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -113,7 +117,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TrackTest.testCreateList" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TrainSheduleTest.testListIsNotNull" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -126,7 +130,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.TrackTest.testCreateList&quot;" />
+            <option value="&quot;org.example.TrainSheduleTest.testListIsNotNull&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -136,7 +140,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TrainSheduleTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TrainSheduleTest.testListIsNull" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -149,7 +153,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.TrainSheduleTest&quot;" />
+            <option value="&quot;org.example.TrainSheduleTest.testListIsNull&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -159,7 +163,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TrainTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TrainSheduleTest.testNullList" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -172,7 +176,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.TrainTest&quot;" />
+            <option value="&quot;org.example.TrainSheduleTest.testNullList&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -184,11 +188,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.QueueTest" />
-        <item itemvalue="Gradle.TrainSheduleTest" />
-        <item itemvalue="Gradle.TrackTest.testCreateList" />
-        <item itemvalue="Gradle.PassengerTest" />
-        <item itemvalue="Gradle.TrainTest" />
+        <item itemvalue="Gradle.TrainSheduleTest.testNullList" />
+        <item itemvalue="Gradle.TrainSheduleTest.testCreateList" />
+        <item itemvalue="Gradle.TrainSheduleTest.testListIsNotNull" />
+        <item itemvalue="Gradle.TrainSheduleTest.testListIsNull" />
+        <item itemvalue="Gradle.GraphTest" />
       </list>
     </recent_temporary>
   </component>
@@ -299,7 +303,21 @@
       <option name="project" value="LOCAL" />
       <updated>1703778167625</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="traversal algorithm modifications">
+      <created>1703821163340</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1703821163340</updated>
+    </task>
+    <task id="LOCAL-00016" summary="constructor modifications">
+      <created>1703829842270</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1703829842270</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -332,7 +350,9 @@
     <MESSAGE value="graph modifications" />
     <MESSAGE value="test cases" />
     <MESSAGE value="added loggers" />
-    <option name="LAST_COMMIT_MESSAGE" value="added loggers" />
+    <MESSAGE value="traversal algorithm modifications" />
+    <MESSAGE value="constructor modifications" />
+    <option name="LAST_COMMIT_MESSAGE" value="constructor modifications" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -362,17 +382,21 @@
     </pin-to-top-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/TrainJourneySimulation$QueueTest.ic" NAME="QueueTest Coverage Results" MODIFIED="1703778322809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/TrainJourneySimulation$TrackTest.ic" NAME="TrackTest Coverage Results" MODIFIED="1703656189494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/TrainJourneySimulation$TrainTest.ic" NAME="TrainTest Coverage Results" MODIFIED="1703761419302" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/TrainJourneySimulation$TrainTest_testConstructor.ic" NAME="TrainTest.testConstructor Coverage Results" MODIFIED="1703761012630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/TrainJourneySimulation$TrainJourneyTest.ic" NAME="TrainJourneyTest Coverage Results" MODIFIED="1703340858837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/TrainJourneySimulation$PassengerTest_testCreateTrainJourney.ic" NAME="PassengerTest.testCreateTrainJourney Coverage Results" MODIFIED="1703342935620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/TrainJourneySimulation$Tests_in__org_example_.ic" NAME="Tests in 'org.example' Coverage Results" MODIFIED="1703755221164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/TrainJourneySimulation$TrainSheduleTest.ic" NAME="TrainSheduleTest Coverage Results" MODIFIED="1703775655134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/TrainJourneySimulation$PassengerTest.ic" NAME="PassengerTest Coverage Results" MODIFIED="1703761919934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/TrainJourneySimulation$StationTest.ic" NAME="StationTest Coverage Results" MODIFIED="1703339700373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/TrainJourneySimulation$TrainTest_testCompareTo.ic" NAME="TrainTest.testCompareTo Coverage Results" MODIFIED="1703761385235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/TrainJourneySimulation$TrackTest_testConstructor.ic" NAME="TrackTest.testConstructor Coverage Results" MODIFIED="1703656438973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TrainJourneySimulation$TrainSheduleTest_testListIsNull.ic" NAME="TrainSheduleTest.testListIsNull Coverage Results" MODIFIED="1703829316343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TrainJourneySimulation$QueueTest.ic" NAME="QueueTest Coverage Results" MODIFIED="1703778322809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TrainJourneySimulation$TrainSheduleTest_testListIsNotNull.ic" NAME="TrainSheduleTest.testListIsNotNull Coverage Results" MODIFIED="1703829532672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TrainJourneySimulation$TrainTest_testConstructor.ic" NAME="TrainTest.testConstructor Coverage Results" MODIFIED="1703761012630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TrainJourneySimulation$Tests_in__org_example_.ic" NAME="Tests in 'org.example' Coverage Results" MODIFIED="1703821553536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TrainJourneySimulation$GraphTest.ic" NAME="GraphTest Coverage Results" MODIFIED="1703822732724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TrainJourneySimulation$PassengerTest.ic" NAME="PassengerTest Coverage Results" MODIFIED="1703761919934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TrainJourneySimulation$TrainTest_testCompareTo.ic" NAME="TrainTest.testCompareTo Coverage Results" MODIFIED="1703761385235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TrainJourneySimulation$TrainSheduleTest_testCreateList.ic" NAME="TrainSheduleTest.testCreateList Coverage Results" MODIFIED="1703831975689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

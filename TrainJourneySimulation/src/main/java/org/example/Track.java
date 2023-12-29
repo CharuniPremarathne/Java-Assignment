@@ -3,20 +3,20 @@ package org.example;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Track {
 
-    public Station first;
-    public Station last;
+    public Station first = null;
+    public Station last = null;
 
     private static final Logger logger = LoggerFactory.getLogger(Track.class);
 
-    public Track(Station first, Station last) {
-        this.first = first;
-        this.last = last;
+    public Track() {
     }
 
     public void createTrack(Station station) {
-
 
         if (first == null) {
             first = station;
@@ -29,20 +29,22 @@ public class Track {
             last = station;
             last.next = null;
         }
-
     }
 
-    public void displayTrack() {
-
+    public List<Station> displayTrack() {
+        List<Station> st = new ArrayList<>();
         Station current = first;
 
         if (first == null) {
             logger.info("The list is empty");
+            return null;
         }
         while (current != null) {
-            System.out.print(current.getStationNo() + "\t");
+            //System.out.print(current.getStationNo() + "\t");
+            st.add(current);
             current = current.next;
         }
+        return st;
     }
 }
 
