@@ -28,22 +28,6 @@ public class TrainShedule {
         }
     }
 
-//    public List<Train> displayTrains(){
-//        Train current = first;
-//        List<Train> trains = new ArrayList<>();
-//
-//        if (first == null) {
-//            logger.info("The list is empty");
-//        } else {
-//            do {
-//                //System.out.print(current.getTrainNo() + " ");
-//                trains.add(current);
-//                current = current.next;
-//            }while (current != first);
-//        }
-//        return trains;
-//    }
-
     public List<Train> getTrains(){
         List<Train> t1 = new ArrayList<>();
         Train current = first;

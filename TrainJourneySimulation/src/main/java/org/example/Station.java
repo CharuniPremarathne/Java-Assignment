@@ -13,7 +13,6 @@ public class Station {
     public Station next;
 
 
-
 //    public Station(int stationNo, float distance, List<Station> connectedStations) {
 //        this.stationNo = stationNo;
 //        this.distance = distance;
@@ -38,14 +37,17 @@ public class Station {
     }
 
 
-
-    public void trainArrivals(List<Train> trains){
+    public void trainArrivals(List<Train> trains) {
         PriorityQueue<Train> trainPriorityQueue = new PriorityQueue<>();
 
         //trainPriorityQueue.addAll(trainShedule.getTrains());
-        trainPriorityQueue.addAll(trains);
+        try {
+            trainPriorityQueue.addAll(trains);
+        } catch (ClassCastException | NullPointerException | IllegalArgumentException e) {
+            e.printStackTrace();
+        }
 
-        while(!trainPriorityQueue.isEmpty()){
+        while (!trainPriorityQueue.isEmpty()) {
             Train train = trainPriorityQueue.poll();
             System.out.print(train.getTrainNo() + "\t");
         }

@@ -60,38 +60,16 @@ public class TrainJourney {
             }
         }
 
-        //find all paths
-//        LinkedList<Station> currentPath = new LinkedList<>();
-//        currentPath.add(stations.get(destSt));
-//        findAllPaths(stations, shortestPath, destSt, currentPath, allPaths);
-
-        //display all paths
-//        System.out.println("All Paths from : " + startSt);
-//
-//        for(LinkedList<Station> path : allPaths){
-//            for(Station station:path){
-//                System.out.print(station.getStationNo() + " , ");
-//            }
-//            System.out.print("\n");
-//        }
 
         //display shortest path
         logger.info("Shortest Path : ");
         printPath(shortestPath, destSt);
+        System.out.println();
         logger.info("\nDistance : " + vertexDisArray[destSt]);
 
         //return vertexDisArray[destSt];
     }
 
-//    private void findAllPaths(List<Station> stations, int[] shortestPath, int currentVertex,LinkedList<Station> currentPath, ArrayList<LinkedList<Station>> allPaths) {
-//        if(shortestPath[currentVertex] != -1){
-//            currentPath.addFirst(stations.get(shortestPath[currentVertex]));
-//            findAllPaths(stations, shortestPath, shortestPath[currentVertex], currentPath, allPaths);
-//            currentPath.removeFirst();
-//        }else{
-//            allPaths.add(new LinkedList<>(currentPath));
-//        }
-//    }
 
     private void printPath(int[] path, int destSt) {
         if (path[destSt] != -1) {
@@ -101,7 +79,7 @@ public class TrainJourney {
         System.out.print(destSt);
     }
 
-    private static int findMinDisVertex(int[] vertexDisArray, boolean[] visited) {
+    private int findMinDisVertex(int[] vertexDisArray, boolean[] visited) {
         int minVertex = -1;
 
         for (int i = 0; i < vertexDisArray.length; i++) {

@@ -16,12 +16,6 @@ public class Passenger {
         trainJourney.searchDistance(stations, adjMatrix, startSt, destSt);
     }
 
-//
-//    public void passengerBoarding() {
-//
-//    }
-
-
     public int getStartSt() {
         return startSt;
     }

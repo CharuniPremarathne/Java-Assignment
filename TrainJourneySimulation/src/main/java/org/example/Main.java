@@ -28,6 +28,7 @@ public class Main {
 
         logger.info("Display Track");
         System.out.print("Start : ");
+
         int start = scanner.nextInt();
 
         System.out.print("Stop : ");
@@ -61,15 +62,6 @@ public class Main {
                 {11, 0, 10, 9, 0}
         };
 
-//        //user input start and destination
-//        System.out.print("Enter the start station : ");
-//        int startStation = scanner.nextInt();
-//
-//        System.out.print("Enter the destination station : ");
-//        int desStation = scanner.nextInt();
-//
-//        Passenger p1 = new Passenger(startStation, desStation);
-//        p1.createTrainJourney(stations, adjMatrix, startStation, desStation);
 
         logger.info("Traversal List");
         Graph newGraph = new Graph();
@@ -99,16 +91,13 @@ public class Main {
             System.out.println(t.getTrainNo());
         }
 
+        //map the list of trains associated with each station
         Map<Station, List<Train>> trainList = new HashMap<>();
 
-        try {
-            for (Train train : trainShedule.getTrains()) {
-                for (Station station : train.getStationList()) {
-                    trainList.computeIfAbsent(station, k -> new ArrayList<>()).add(train);
-                }
+        for (Train train : trainShedule.getTrains()) {
+            for (Station station : train.getStationList()) {
+                trainList.computeIfAbsent(station, k -> new ArrayList<>()).add(train);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
 
 
@@ -151,11 +140,7 @@ public class Main {
             System.out.println("Add another Passenger(Y/N) : ");
             String res = scanner.next();
 
-            if (res.equalsIgnoreCase("Y")) {
-                response = true;
-            } else {
-                response = false;
-            }
+            response = res.equalsIgnoreCase("Y") ? true : false;
         }
 
         //map for count the passengers in every stations
