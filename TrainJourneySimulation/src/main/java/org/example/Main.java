@@ -94,29 +94,42 @@ public class Main {
         //map the list of trains associated with each station
         Map<Station, List<Train>> trainList = new HashMap<>();
 
-        for (Train train : trainShedule.getTrains()) {
-            for (Station station : train.getStationList()) {
-                trainList.computeIfAbsent(station, k -> new ArrayList<>()).add(train);
-            }
-        }
+//        for (Train train : trainShedule.getTrains()) {
+//            for (Station station : train.getStationList()) {
+//                trainList.computeIfAbsent(station, k -> new ArrayList<>()).add(train);
+//            }
+//        }
 
 
         logger.info("\n\nArrival Priority");
-        for (Map.Entry<Station, List<Train>> listEntry : trainList.entrySet()) {
-            Station station = listEntry.getKey();
-            List<Train> trains = listEntry.getValue();
-
-            System.out.println("Station : " + station.getStationNo());
-            station.trainArrivals(trains);
-
-            System.out.println("\n");
-        }
+//        for (Map.Entry<Station, List<Train>> listEntry : trainList.entrySet()) {
+//            Station station = listEntry.getKey();
+//            List<Train> trains = listEntry.getValue();
+//
+//            System.out.println("Station : " + station.getStationNo());
+//            station.trainArrivals(trains);
+//
+//            System.out.println("\n");
+//        }
 
 //        for (Station st : stations) {
 //            st.trainArrivals(trains);
 //        }
 
+        PriorityQueue<Train> trainPriorityQueue = new PriorityQueue<>();
 
+        trainPriorityQueue.enqueue(new Train(1,"express"));
+        trainPriorityQueue.enqueue(new Train(2,"shortDis"));
+        trainPriorityQueue.enqueue(new Train(3,"longDis"));
+        trainPriorityQueue.enqueue(new Train(4,"express"));
+        trainPriorityQueue.enqueue(new Train(5, "shortDis"));
+
+        while (!trainPriorityQueue.isEmpty()){
+            Train dequeueTrain = trainPriorityQueue.dequeue();
+            System.out.println("Dequeue : " + dequeueTrain.getTrainNo());
+        }
+
+        System.out.println();
         logger.info("Create Passenger Queue");
 
         Queue queue = new Queue(50);

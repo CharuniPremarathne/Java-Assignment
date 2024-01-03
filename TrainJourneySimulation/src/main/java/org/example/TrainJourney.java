@@ -39,7 +39,7 @@ public class TrainJourney {
         }
 
         //list of all possible paths
-        ArrayList<LinkedList<Station>> allPaths = new ArrayList<>();
+        //ArrayList<LinkedList<Station>> allPaths = new ArrayList<>();
 
         //finding most close vertex
         for (int i = 0; i < stations.size(); i++) {

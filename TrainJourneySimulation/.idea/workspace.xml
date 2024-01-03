@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25da4dd9-a0dc-4884-8902-db6e539b943f" name="Changes" comment="test cases">
+    <list default="true" id="25da4dd9-a0dc-4884-8902-db6e539b943f" name="Changes" comment="modifications">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/PriorityQueue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Passenger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Station.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Station.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Train.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Train.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TrainJourney.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TrainJourney.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TrainShedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TrainShedule.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +35,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -68,7 +68,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.TrainSheduleTest.testDisplayTrackEmptyList">
+  <component name="RunManager">
     <configuration name="TrackTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -186,10 +186,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TrackTest" />
         <item itemvalue="Gradle.TrainSheduleTest.testDisplayTrackEmptyList" />
         <item itemvalue="Gradle.TrackTest.testDisplayTrackEmptyList" />
         <item itemvalue="Gradle.TrackTest.testDisplayTrack" />
-        <item itemvalue="Gradle.TrackTest" />
         <item itemvalue="Gradle.TrackTest.testCreateList" />
       </list>
     </recent_temporary>
@@ -322,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703844414889</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="modifications">
+      <created>1704173472247</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1704173472247</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -357,7 +364,8 @@
     <MESSAGE value="traversal algorithm modifications" />
     <MESSAGE value="constructor modifications" />
     <MESSAGE value="test cases" />
-    <option name="LAST_COMMIT_MESSAGE" value="test cases" />
+    <MESSAGE value="modifications" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifications" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -386,6 +394,9 @@
     <SUITE FILE_PATH="coverage/TrainJourneySimulation$TrainTest.ic" NAME="TrainTest Coverage Results" MODIFIED="1703761419302" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/TrainJourneySimulation$TrainJourneyTest.ic" NAME="TrainJourneyTest Coverage Results" MODIFIED="1703340858837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/TrainJourneySimulation$PassengerTest_testCreateTrainJourney.ic" NAME="PassengerTest.testCreateTrainJourney Coverage Results" MODIFIED="1703342935620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TrainJourneySimulation$Main.ic" NAME="Main Coverage Results" MODIFIED="1704266644159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/TrainJourneySimulation$TrainSheduleTest.ic" NAME="TrainSheduleTest Coverage Results" MODIFIED="1703775655134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/TrainJourneySimulation$StationTest.ic" NAME="StationTest Coverage Results" MODIFIED="1703339700373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/TrainJourneySimulation$TrackTest_testConstructor.ic" NAME="TrackTest.testConstructor Coverage Results" MODIFIED="1703656438973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

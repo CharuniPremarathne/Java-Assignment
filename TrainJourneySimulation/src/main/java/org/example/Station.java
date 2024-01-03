@@ -1,7 +1,7 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.PriorityQueue;
 
 public class Station {
     private int stationNo;
@@ -36,20 +36,21 @@ public class Station {
         return distance;
     }
 
+//
+//    public void trainArrivals(List<Train> trains) {
+//        PriorityQueue<Train> trainPriorityQueue = new PriorityQueue<>();
+//
+//        //trainPriorityQueue.addAll(trainShedule.getTrains());
+//        try {
+//            trainPriorityQueue.addAll(trains);
+//        } catch (ClassCastException | NullPointerException | IllegalArgumentException e) {
+//            e.printStackTrace();
+//        }
+//
+//        while (!trainPriorityQueue.isEmpty()) {
+//            Train train = trainPriorityQueue.poll();
+//            System.out.print(train.getTrainNo() + "\t");
+//        }
+//    }
 
-    public void trainArrivals(List<Train> trains) {
-        PriorityQueue<Train> trainPriorityQueue = new PriorityQueue<>();
-
-        //trainPriorityQueue.addAll(trainShedule.getTrains());
-        try {
-            trainPriorityQueue.addAll(trains);
-        } catch (ClassCastException | NullPointerException | IllegalArgumentException e) {
-            e.printStackTrace();
-        }
-
-        while (!trainPriorityQueue.isEmpty()) {
-            Train train = trainPriorityQueue.poll();
-            System.out.print(train.getTrainNo() + "\t");
-        }
-    }
 }

@@ -8,7 +8,18 @@ public class Train implements Comparable<Train>{
     private int trainNo;
     private String trainType;
 
+    private int priority;
+
     private List<Station> stationList;
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
+
     public Train next;
 
     public Train(int trainNo, String trainType) {
