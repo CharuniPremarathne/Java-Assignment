@@ -102,31 +102,17 @@ public class Main {
 
 
         logger.info("\n\nArrival Priority");
-//        for (Map.Entry<Station, List<Train>> listEntry : trainList.entrySet()) {
-//            Station station = listEntry.getKey();
-//            List<Train> trains = listEntry.getValue();
-//
-//            System.out.println("Station : " + station.getStationNo());
-//            station.trainArrivals(trains);
-//
-//            System.out.println("\n");
-//        }
 
-//        for (Station st : stations) {
-//            st.trainArrivals(trains);
-//        }
+        //create priority queue
+        Node pq = new Node(new Train(1,"express"),1);
+        pq = PriorityQueue.push(pq,new Train(5, "shortDis"), 2);
+        pq = PriorityQueue.push(pq,new Train(2,"shortDis"), 2);
+        pq = PriorityQueue.push(pq,new Train(3,"longDis"), 3);
+        pq = PriorityQueue.push(pq,new Train(4,"express"), 1);
 
-        PriorityQueue<Train> trainPriorityQueue = new PriorityQueue<>();
-
-        trainPriorityQueue.enqueue(new Train(1,"express"));
-        trainPriorityQueue.enqueue(new Train(2,"shortDis"));
-        trainPriorityQueue.enqueue(new Train(3,"longDis"));
-        trainPriorityQueue.enqueue(new Train(4,"express"));
-        trainPriorityQueue.enqueue(new Train(5, "shortDis"));
-
-        while (!trainPriorityQueue.isEmpty()){
-            Train dequeueTrain = trainPriorityQueue.dequeue();
-            System.out.println("Dequeue : " + dequeueTrain.getTrainNo());
+        while(PriorityQueue.isEmpty(pq) == 0){
+            System.out.println(PriorityQueue.peek(pq).getTrainNo());
+            pq = PriorityQueue.pop(pq);
         }
 
         System.out.println();

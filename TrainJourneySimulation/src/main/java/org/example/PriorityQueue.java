@@ -3,32 +3,42 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PriorityQueue<Train extends Comparable<Train>> {
+public class PriorityQueue{
 
-    private List<Train> trains;
-
-    public PriorityQueue(){
-        this.trains = new ArrayList<>();
+    //return the head value
+    public static Train peek(Node head){
+        return (head).train;
     }
 
-    public void enqueue(Train train){
-        trains.add(train);
-
-        trains.sort(null);
+    //remove the element with the highest priority from the queue
+    public static Node pop(Node head){
+        Node temp = head;
+        head = head.next;
+        return head;
     }
 
-    public Train dequeue(){
-        if(isEmpty()){
-            System.out.println("Queue is empty");
+    //push according to priority
+    public static Node push(Node head, Train t, int p){
+        Node start =  head;
+
+        Node temp = new Node(t,p);
+
+        if(head.priority > p){
+            temp.next = head;
+            head = temp;
+        }else{
+            while(start.next != null && start.next.priority < p){
+                start = start.next;
+            }
+
+            temp.next = start.next;
+            start.next = temp;
         }
-        return trains.remove(0);
+        return head;
     }
 
-    public boolean isEmpty(){
-        return trains.isEmpty();
-    }
-
-    private int size(){
-        return trains.size();
+    //check the list is empty
+    public static int isEmpty(Node head){
+        return head == null ? 1 : 0;
     }
 }
